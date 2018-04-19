@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5//EN"
+    "http://www.w3.org/TR/html5/html5.dtd"
+    >
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+    <script src="ajax.js" type="text/javascript" > </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js">
+    </script><script src="./closure.js"></script>
+
+</head>
+
+<body>
+    <div id="outputDiv" style="border: 1px solid #1C1C1C; background-color:yellow;">this is the output</div>
+
+
+    <script>
+        // define a module
+        /*
+        var KASS = function(){
+            var x = 1;
+            // define the public interface of the module using closure
+            return {
+                getX: function() {
+                    return x++;
+                },
+                getHi: function() {
+                    return 'Hi';
+                },
+                y: 'y is public var'
+            };
+        };
+        */
+
+        $(function(){
+            //getContacts();
+            var oDiv = $('#outputDiv');
+            kass = KASS();
+            kass2 = KASS();
+            kassem = window.KASSEM;
+            // for kass, the x value increments. Note that kass2 has its own instance value
+            oDiv.append('<p>kass.getX()='+kass.getX());
+            oDiv.append('<p>kass.getX()='+kass.getX());
+            oDiv.append('<p>kass.getX()='+kass.getX());
+
+            oDiv.append('<p>kass2.getX()='+kass2.getX());
+
+            // use the instance that was prodided by the module using the window
+            oDiv.append('<p>kassem.getX()='+kassem.getX());
+            oDiv.append('<p>kass.getHi()='+kass.getHi());
+            oDiv.append('<p>kass.y='+kass.y);
+        });
+    </script>
+</body>
+</html>

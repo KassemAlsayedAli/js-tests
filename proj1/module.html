@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5//EN"
+    "http://www.w3.org/TR/html5/html5.dtd"
+    >
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+    <script src="module.js" type="text/javascript" > </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+        
+        var aClone = $.extend(true, {}, cartTotaler);
+        
+        
+        cartTotaler.add(1);
+        cartTotaler.add(2);
+        document.write('<br>cartTotaler: '+cartTotaler.calculateTitle());
+        cartTotaler.remove(2);
+        document.write('<br>cartTotaler: '+ cartTotaler.calculateTitle());
+        
+        document.write('<br>aClone: '+ aClone.calculateTitle());
+        
+        var kass = cartTotaler1();
+        kass.add(2);
+        kass.add(4);
+        document.write('<br>kass: '+kass.calculateTitle());
+        
+        kass.remove(2);
+        
+
+        
+        
+
+    </script>
+</body>
+</html>

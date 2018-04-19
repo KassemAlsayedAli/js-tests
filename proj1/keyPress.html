@@ -1,0 +1,45 @@
+
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+        
+var timeout;
+$(document).ready(function(){
+  $('firstname').keypress(function() {
+      if(timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+      }
+      timeout = setTimeout(myFunction, 1000);
+  });
+});
+
+
+
+function myFunction() { 
+  alert('myFunction is running');
+  clearTimeout(timeout); // this way will not run infinitely
+}
+
+        
+</script>
+</head>
+
+<body>
+
+<form>
+  First name:<br>
+  <input type="text" name="firstname" id="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname">
+</form>
+
+
+
+
+</body>
+
+</html>

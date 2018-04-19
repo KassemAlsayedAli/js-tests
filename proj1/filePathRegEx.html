@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5//EN"
+    "http://www.w3.org/TR/html5/html5.dtd"
+    >
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+    <script src="module2.js" type="text/javascript" > </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+        //var reSSN = /^[0-9]{3}[\- ]?[0-9]{2}[\- ]?[0-9]{4}$/;
+        //var reSSN = /^(?:[\w]\:|\\)(\\[a-z_\-\s0-9\.]+)+\.(txt|gif|pdf|doc|docx|xls|xlsx)$/;
+        
+        //var reSSN = /^[0-9]{3}[\- ]?[0-9]{2}[\- ]?[0-9]{4}$/i;
+        
+        var regex = new RegExp('^[a-z]:((\\\\|\/)[a-zA-Z0-9_ \-]+)+\.(txt|gif|pdf|doc|docx|xls|xlsx|xml)$', 'i');
+        //var regex = new RegExp('^(?:[\w]\:|\\)(\\[a-zA-Z0-9_ \-]+)+\.(txt|gif|pdf|doc|docx|xls|xlsx|xml)$', 'i');
+        //var regex = new RegExp('^[a-z]:((\\\\|\/)[a-zA-Z0-9_ \-]+)+\.xml$', 'i');
+        //regex.test(str5);
+
+        function checkSsn(ssn){
+            if (regex.test(ssn)) {
+                alert("VALID");
+            } else {
+                alert("INVALID SSNINVALID SSNINVALID SSNINVALID SSNINVALID");
+            }
+        }
+        //checkSsn('\\192.168.0.1/folder/file.xml');
+        //checkSsn("c:\myfolder\abcabc.doc");
+        checkSsn("D:/test.xml");
+        checkSsn("//wewe/test.xml");
+        //checkSsn("D:/test.xml");
+        //checkSsn('\\192.168.0.1\folder\file.pdf');
+        
+        //checkSsn('123-45-6789');
+
+
+    </script>
+</body>
+</html>
